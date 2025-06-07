@@ -1,0 +1,22 @@
+server:
+  port: 8082
+
+dubbo:
+  application:
+    name: cross-gateway-test
+    version: 1.0.0
+  registry:
+    #address: N/A 泛化调用不能使用此方式
+    address: zookeeper://192.168.1.102:2181
+  protocol:
+    name: dubbo
+    port: 20881
+  scan:
+    base-packages: cn.rockystudio.gateway.rpc
+
+cross-gateway-sdk:
+  enabled: true
+  address: http://192.168.1.102:8901  # 注册中心；从这里获取接口信息以及完成注册网关操作
+  systemId: cross-gateway-test-provider
+  systemName: 网关sdk测试工程
+  systemRegistry: zookeeper://192.168.1.102:2181

@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "969bb85c-1319-4d30-8433-be6625fec97e",
+		"name": "API 网关：中间件设计和实践",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23271741"
+	},
+	"item": [
+		{
+			"name": "Nginx负载：http://172.20.10.12:8090/10001/wg/activity/sayHi?str=10001",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://172.20.10.12:8090/10001/wg/activity/sayHi?str=10001",
+					"protocol": "http",
+					"host": [
+						"172",
+						"20",
+						"10",
+						"12"
+					],
+					"port": "8090",
+					"path": [
+						"10001",
+						"wg",
+						"activity",
+						"sayHi"
+					],
+					"query": [
+						{
+							"key": "str",
+							"value": "10001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "直连网关：http://172.20.10.12:7397/wg/activity/sayHi?str=1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Rocky\",\n    \"uid\":\"10001\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.20.10.12:7397/wg/activity/sayHi?str=1",
+					"protocol": "http",
+					"host": [
+						"172",
+						"20",
+						"10",
+						"12"
+					],
+					"port": "7397",
+					"path": [
+						"wg",
+						"activity",
+						"sayHi"
+					],
+					"query": [
+						{
+							"key": "str",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

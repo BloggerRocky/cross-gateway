@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=cn.rockystudio.gateway.sdk.config.GatewaySDKAutoConfig
